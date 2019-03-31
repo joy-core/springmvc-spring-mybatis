@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.test.user.dao.IUserDao">
+	<!-- 根据Id查询 -->
+	<select id="getUserById" parameterType="string" resultType="com.test.user.model.User">
+		SELECT	id	"id",
+				user_name	"userName",
+				password	"password",
+				age			"age"
+		FROM	user_t
+		WHERE	id = #{id}
+	</select>
+	
+	<select id="getAllUser" resultType="com.test.user.model.User">
+		SELECT	id	"id",
+				user_name	"userName",
+				password	"password",
+				age			"age"
+		FROM	user_t
+	</select>
+</mapper>
